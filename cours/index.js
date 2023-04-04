@@ -18,7 +18,6 @@ btn2.addEventListener("click", () => {
 
 const mousemove = document.querySelector(".mousemove");
 window.addEventListener("mousemove", (e) => {
-  console.log(e);
   mousemove.style.left = e.pageX + "px";
   mousemove.style.top = e.pageY + "px";
 });
@@ -31,4 +30,55 @@ window.addEventListener("mousedown", () => {
 window.addEventListener("mouseup", () => {
   mousemove.style.transform = "scale(1) translate(-50%, -50%)";
   mousemove.style.border = "2px solid pink";
+});
+
+questionContainer.addEventListener("mouseenter", () => {
+  questionContainer.style.background = "rgba(0,0,0,0.6)";
+});
+
+questionContainer.addEventListener("mouseout", () => {
+  questionContainer.style.background = "pink";
+});
+
+response.addEventListener("mouseover", () => {
+  response.style.transform = "rotate(2deg)";
+});
+
+//__________________________________________________________
+
+const keypressContainer = document.querySelector(".keypress");
+const key = document.getElementById("key");
+const ring = () => {
+  const audio = new Audio();
+  audio.src = "./Enter.mp3";
+  audio.play();
+};
+
+document.addEventListener("keypress", (e) => {
+  key.textContent = e.key;
+
+  if (e.key === "j") {
+    keypressContainer.style.background = "pink";
+  } else if (e.key === "h") {
+    keypressContainer.style.background = "teal";
+  } else {
+    keypressContainer.style.background = "red";
+  }
+
+  ring();
+});
+
+//-------------------------------------------------------------
+//scroll Event
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+
+  if (window.scrollY > 120) {
+    nav.style.top = 0;
+  } else {
+    nav.style.top = "-50px";
+  }
 });
