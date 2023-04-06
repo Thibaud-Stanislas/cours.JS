@@ -82,3 +82,26 @@ window.addEventListener("scroll", () => {
     nav.style.top = "-50px";
   }
 });
+
+//---------------------------------------------------------------
+// Form Event
+const inputName = document.querySelector('input[type="text"]');
+const select = document.querySelector("select");
+const form = document.querySelector("form");
+let pseudo = "";
+let language = "";
+
+inputName.addEventListener("input", (e) => {
+  pseudo = e.target.value;
+});
+select.addEventListener("input", (e) => {
+  language = e.target.value;
+});
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (cgv.checked) {
+  } else {
+    alert("Veuillez accepter les CGV");
+  }
+});
