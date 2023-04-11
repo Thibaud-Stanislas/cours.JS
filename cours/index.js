@@ -101,7 +101,21 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (cgv.checked) {
+    document.querySelector("form > div").innerHTML = `
+       <h3>Pseudo : ${pseudo}</h3>
+       <h4>Language : ${language}</h4>
+    `;
   } else {
     alert("Veuillez accepter les CGV");
   }
+});
+
+//-----------------------------------------------------------
+//ForEach
+const boxes = document.querySelectorAll(".box");
+
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    e.target.style.transform = "scale(0.7)";
+  });
 });
