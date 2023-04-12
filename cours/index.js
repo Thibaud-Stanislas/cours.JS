@@ -119,3 +119,47 @@ boxes.forEach((box) => {
     e.target.style.transform = "scale(0.7)";
   });
 });
+
+//----------------------------------------------------------------------
+//BOM
+
+//window.open("http://google.com", "cours js", "height=600, width=800");
+
+//confirm
+
+btn2.addEventListener("click", () => {
+  confirm("voulez-vous vraiment vous tromper?");
+});
+
+//prompt
+btn1.addEventListener("click", () => {
+  let answer = prompt("Entrez votre nom");
+  questionContainer.innerHTML += "<h3>Bravo " + answer + "</h3>";
+});
+
+setTimeout(() => {
+  questionContainer.style.borderRadius = "300px";
+}, 2000);
+
+//let interval = setInterval(() => {
+//document.body.innerHTML += "<div class='box'><h2>Nouvelle Boite !</h2></div>";
+//}, 1000);
+
+document.body.addEventListener("click", (e) => {
+  e.target.remove();
+  clearInterval(interval);
+});
+
+//location
+
+//console.log(location.href);
+//console.log(location.host);
+//console.log(location.pasthname);
+//console.log(location.href);
+//location.replace("http://lequipe.fr");
+
+//window.onload = () => {
+//location.href = "http://twitter.fr";
+//};
+
+//console.log(navigator.userAgent);
